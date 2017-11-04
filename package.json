@@ -1,6 +1,9 @@
 {
   "name": "expreee-demo",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "description": "just express-demo",
   "main": "index.js",
   "scripts": {
@@ -24,5 +27,13 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "nconf": "^0.8.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
   }
 }

@@ -1,9 +1,9 @@
+'use strict'
 class RouterIndex {
   constructor (express) {
     // this._router = express.Router()
     this._authRouter = express.Router()
     this._commonRouter = express.Router()
-    
     require('./home')(this._authRouter, this._commonRouter)
   }
 
@@ -15,4 +15,4 @@ class RouterIndex {
   }
 }
 
-module.exports = RouterIndex;
+module.exports = RouterIndex
