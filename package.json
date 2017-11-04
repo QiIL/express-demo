@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=unittest node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,10 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "install": "^0.10.1",
+    "mocha": "^4.0.1",
+    "should": "^13.1.3",
+    "superagent": "^3.8.0"
   }
 }
