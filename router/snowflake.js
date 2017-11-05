@@ -1,7 +1,9 @@
 /**
  * snowflake 路由
  */
-const snowflake = require('../api/controller/snowflake')
-module.exports = (authRouter, commonRouter) => {
-  commonRouter.get('/create', snowflake.create)
-}
+const express = require('express')
+const router = express.Router()
+const snowflake = require('../api/controller/common/snowflake')
+
+router.get('/create', snowflake.create)
+module.exports = router

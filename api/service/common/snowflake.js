@@ -11,7 +11,7 @@
  * 本系统的snowflake的机器应该不会太多，所以减少了2位机器位，并把这些机器位分配到时间位和毫秒内计数位。
  */
 'use strict'
-const StringBinaryService = require('./stringbinary')
+const StringBinaryService = require('./string_binary')
 
 /**
  * 私有方法: 阻塞到下一个毫秒，直到获得新的时间戳

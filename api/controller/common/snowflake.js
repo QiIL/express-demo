@@ -2,7 +2,7 @@
  * snowflake
  */
 'use strict'
-const SnowFlakeService = require('../service/snowflake')
+const SnowFlakeService = require('../../service/common/snowflake')
 module.exports = {
   create: async (req, res) => {
     let data = []
