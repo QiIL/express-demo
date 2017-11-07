@@ -11,7 +11,5 @@ app.use('/api/auth', RouterIndex.authRouter)
 app.use('/api/v1', RouterIndex.commonRouter)
 
 app.listen(nconf.get('port') || 30000, nconf.get('host'), () => {
-  console.log(`Server running at http://${nconf.get('host')}:${nconf.get('port') || 30000}`)
+  console.log(`\x1b[33m%s\x1b[0m`, `Server running at http://${nconf.get('host')}:${nconf.get('port') || 30000}`)
 })
-
-module.exports = app
