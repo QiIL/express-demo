@@ -1,9 +1,27 @@
 /**
  * router
  */
-// const authRouter = require('./auth_router')
-const commonRouter = require('./common_router')
-module.exports = (app) => {
-  // app.use('/api/auth', authRouter(app))
-  app.use('/api/v1', commonRouter(app))
+const message = require('../api/middlewares/message').message
+const express = require('express')
+
+const authRouter = express.Router()
+const commonRouter = express.Router()
+
+/**
+ * authRouter中间件
+ */
+authRouter.use(message)
+
+/**
+ * commonRouter中间件
+ */
+
+/**
+ * 路由编写
+ */
+require('./snowflake')(authRouter, commonRouter)
+
+module.exports = {
+  authRouter: authRouter,
+  commonRouter: commonRouter
 }
