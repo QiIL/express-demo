@@ -1,6 +1,6 @@
 'use strict'
 const nconf = require('nconf')
-const config = require('./config')
+const config = require('./index')
 
 nconf.overrides(config)
 

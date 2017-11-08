@@ -14,7 +14,7 @@ if (CNF_PATH) {
   // 环境变量传递配置文件中缀的启动方式
   // export NODE_ENV=production && node index.js
   nconf.env()
-  console.log(`\x1b[32m%s%s%s\x1b[0m:`, 'info:', `Server run by setting NODE_ENV AS: `, nconf.get('NODE_ENV'))
   const NODE_ENV = nconf.get('NODE_ENV') || 'development'
-  module.exports = require(`${__dirname}/config.${NODE_ENV}.js`)
+  console.log(`\x1b[32m%s%s%s\x1b[0m:`, 'info:', `Server run by setting NODE_ENV AS: `, NODE_ENV)
+  module.exports = require(`${__dirname}/env/config.${NODE_ENV}.js`)
 }

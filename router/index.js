@@ -20,6 +20,7 @@ authRouter.use(message)
  * 路由编写
  */
 require('./snowflake')(authRouter, commonRouter)
+require('./comment')(authRouter, commonRouter)
 
 module.exports = {
   authRouter: authRouter,

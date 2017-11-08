@@ -1,7 +1,7 @@
 const baseConfig = require('./config.base')
 
-let prodConfig = {
-  mongodb: '127.0.0.1:27017/pord',
+const prodConfig = {
+  mongodb: 'mongodb://localhost:27017/Express_Demo_Pord',
   port: 30000
 }
 

@@ -1,7 +1,7 @@
 const baseConfig = require('./config.base')
 
-let unitTestConfig = {
-  mongodb: '127.0.0.1:27017/test',
+const unitTestConfig = {
+  mongodb: 'mongodb://localhost:27017/Express_Demo_Test',
   port: 30002
 }
 

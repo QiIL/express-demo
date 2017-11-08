@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const RouterIndex = require('./router')
+const RouterIndex = require('../router')
 const nconf = require('nconf')
 const app = express()
 
