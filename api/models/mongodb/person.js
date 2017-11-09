@@ -8,7 +8,7 @@ const Schema = mongoose.Schema
 const PersonSchema = new Schema({
   Name: {type: String}, // 名字
   Birthday: {type: Date}, // 生日
-  Pet: [
+  Pets: [
     {type: Schema.Types.ObjectId, ref: 'Pet'}
   ] // 宠物
 })
@@ -16,10 +16,10 @@ const PersonSchema = new Schema({
 const PersonValidateSchema = Joi.object({
   Name: Joi.string(),
   Birthday: Joi.date(),
-  Pet: Joi.array()
+  Pets: Joi.array()
 })
 
 module.exports = {
-  PersonModel: mongoose.model('Person', PersonSchema),
+  PersonModel: mongoose.model('Person', PersonSchema, 'Person'),
   PersonSchema: PersonValidateSchema
 }

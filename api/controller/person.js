@@ -1,14 +1,14 @@
 /**
- * 评论业务
+ * 人类
  */
-const {savePet, findPet} = require('../services/pet')
-const {PetSchema} = require('../models/mongodb/pet')
+const {savePerson, findPerson} = require('../services/person')
+const {PersonSchema} = require('../models/mongodb/person')
 const {validate} = require('../services/common/body_validate')
 
 module.exports = {
   find: async (req, res) => {
     try {
-      let persons = await findPet({}, null, {limit: 2})
+      let persons = await findPerson({})
       return res.json({data: persons})
     } catch (err) {
       return res.status(500).json({error: err.message})
@@ -16,9 +16,9 @@ module.exports = {
   },
   create: async (req, res) => {
     try {
-      let reqData = await validate(PetSchema, req.body)
-      const newPet = await savePet(reqData)
-      return res.status(201).json({data: newPet, msg: '添加宠物成功'})
+      let reqData = await validate(PersonSchema, req.body)
+      let newPerson = await savePerson(reqData)
+      return res.status(201).json({data: newPerson})
     } catch (err) {
       return res.status(500).json({error: err.message})
     }

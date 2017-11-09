@@ -24,8 +24,10 @@
   },
   "homepage": "https://github.com/QiIL/express-demo#readme",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "joi": "^13.0.1",
     "moment": "^2.19.1",
     "mongoose": "^4.13.0",
     "nconf": "^0.8.5"

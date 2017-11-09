@@ -1,22 +1,22 @@
 /**
  * 宠物服务
  */
-const Pet = require('../models/mongodb/pet')
+const {PetModel} = require('../models/mongodb/pet')
 
 module.exports = {
   savePet: (data) => {
-    return new Pet(data).save()
+    return new PetModel(data).save()
   },
-  findPet: (filter) => {
-    return Pet.find(filter)
+  findPet: (filter, field = null, options = {}) => {
+    return PetModel.find(filter, field, options)
   },
-  findOnePet: (filter) => {
-    return Pet.findOne(filter)
+  findOnePet: (filter, field = null, options = {}) => {
+    return PetModel.findOneAsync(filter, field, options)
   },
   findPetById: (petId) => {
-    return Pet.findById(petId)
+    return PetModel.findByIdAsync(petId)
   },
   updatePet: (filter, data, options = {}) => {
-    return Pet.update(filter, data, options)
+    return PetModel.updateAsync(filter, data, options)
   }
 }
