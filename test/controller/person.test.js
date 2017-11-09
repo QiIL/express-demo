@@ -11,7 +11,7 @@ describe('Controller: personController', () => {
       Birthday: 1510209213000,
       Pets: []
     }
-    it('should creste many different ids', (done) => {
+    it('should creste a new person', (done) => {
       agent.post(baseUrl.commentRout + '/person')
         .send(data)
         .end((err, res) => {
@@ -27,6 +27,22 @@ describe('Controller: personController', () => {
         .end((err, res) => {
           if (err) console.log(err.message)
           res.status.should.equal(200)
+          done(err)
+        })
+    })
+  })
+  describe('Action: update', () => {
+    var data = {
+      Name: "Filmend",
+      Birthday: 1510209213000,
+      Pets: []
+    }
+    it('should update id: 5a042257312de02d66cf9f5c', (done) => {
+      agent.put(baseUrl.commentRout + '/person/5a042257312de02d66cf9f5c')
+        .send(data)
+        .end((err, res) => {
+          if (err) console.log(err.message)
+          res.status.should.equal(201)
           done(err)
         })
     })

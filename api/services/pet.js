@@ -11,12 +11,12 @@ module.exports = {
     return PetModel.find(filter, field, options)
   },
   findOnePet: (filter, field = null, options = {}) => {
-    return PetModel.findOneAsync(filter, field, options)
+    return PetModel.findOne(filter, field, options)
   },
   findPetById: (petId) => {
-    return PetModel.findByIdAsync(petId)
+    return PetModel.findById(petId)
   },
   updatePet: (filter, data, options = {}) => {
-    return PetModel.updateAsync(filter, data, options)
+    return PetModel.findOneAndUpdate(filter, data, options)
   }
 }

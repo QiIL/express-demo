@@ -11,12 +11,12 @@ module.exports = {
     return Person.find(filter, field, options)
   },
   findOnePerson: (filter, field = null, options = {}) => {
-    return Person.findOneAsync(filter, field, options)
+    return Person.findOne(filter, field, options)
   },
   findPersonById: (personId) => {
-    return Person.findByIdAsync(personId)
+    return Person.findById(personId)
   },
   updatePerson: (filter, data, options = {}) => {
-    return Person.updateAsync(filter, data, options)
+    return Person.findOneAndUpdate(filter, data, options)
   }
 }
