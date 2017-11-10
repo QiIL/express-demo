@@ -1,5 +1,5 @@
 /**
- * 评论业务
+ * 宠物业务
  */
 const {savePet, findPet} = require('../services/pet')
 const {PetSchema} = require('../models/mongodb/pet')

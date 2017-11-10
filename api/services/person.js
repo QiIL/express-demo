@@ -1,7 +1,7 @@
 /**
  * 人类服务
  */
-const Person = require('../models/mongodb/person').PersonModel
+const Person = require('../models/mongodb/person').personModel
 
 module.exports = {
   savePerson: (data) => {

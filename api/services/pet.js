@@ -1,7 +1,7 @@
 /**
  * 宠物服务
  */
-const {PetModel} = require('../models/mongodb/pet')
+const PetModel = require('../models/mongodb/pet').petModel
 
 module.exports = {
   savePet: (data) => {

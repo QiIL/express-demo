@@ -20,6 +20,6 @@ const PersonValidateSchema = Joi.object({
 })
 
 module.exports = {
-  PersonModel: mongoose.model('Person', PersonSchema, 'Person'),
-  PersonSchema: PersonValidateSchema
+  personModel: mongoose.model('Person', PersonSchema, 'Person'),
+  personSchema: PersonValidateSchema
 }

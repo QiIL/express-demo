@@ -22,6 +22,6 @@ const PetValidateSchema = Joi.object({
 })
 
 module.exports = {
-  PetModel: mongoose.model('Pet', PetSchema, 'Pet'),
-  PetSchema: PetValidateSchema
+  petModel: mongoose.model('Pet', PetSchema, 'Pet'),
+  petSchema: PetValidateSchema
 }

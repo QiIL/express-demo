@@ -31,14 +31,16 @@ describe('Controller: personController', () => {
         })
     })
   })
-  describe('Action: update', () => {
+  describe.only('Action: update', () => {
     var data = {
       Name: "Filmend",
       Birthday: 1510209213000,
-      Pets: []
+      Pets: [
+        "5a042731b8a278345189430e"
+      ]
     }
     it('should update id: 5a042257312de02d66cf9f5c', (done) => {
-      agent.put(baseUrl.commentRout + '/person/5a042257312de02d66cf9f5c')
+      agent.put(baseUrl.commentRout + '/person/5a042731b8a278345189430d')
         .send(data)
         .end((err, res) => {
           if (err) console.log(err.message)
