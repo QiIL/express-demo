@@ -30,7 +30,10 @@
     "joi": "^13.0.1",
     "moment": "^2.19.1",
     "mongoose": "^4.13.0",
-    "nconf": "^0.8.5"
+    "nconf": "^0.8.5",
+    "pg": "^7.4.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.22.5"
   },
   "devDependencies": {
     "eslint": "^4.10.0",
