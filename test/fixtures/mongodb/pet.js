@@ -11,7 +11,7 @@ module.exports = [
     _id: "5a04265b08c52833288f5a48",
     Master: "5a042731b8a2783451894301",
     Ptype: "八哥",
-    ScholarName: "I don't know",
+    ScholarName: "LGTM",
     Name: "ass",
     Birtyday: 1510282775000
   }
