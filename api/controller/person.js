@@ -1,6 +1,8 @@
 /**
  * 人类
  */
+'use strict'
+
 const {savePerson, findPerson, updatePerson} = require('../services/person')
 const {PersonSchema} = require('../models/mongodb/person')
 const {validate} = require('../services/common/body_validate')

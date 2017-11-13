@@ -1,6 +1,8 @@
 /**
  * 宠物业务
  */
+'use strict'
+
 const {savePet, findPet} = require('../services/pet')
 const {PetSchema} = require('../models/mongodb/pet')
 const {validate} = require('../services/common/body_validate')

@@ -11,6 +11,7 @@ const prodConfig = {
       port: 5432,
       dialect: 'postgres',
       omitNull: true,
+      logging: false,
       pool: {
         max: 5,
         min: 0,
