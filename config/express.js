@@ -1,11 +1,17 @@
+const nconf = require('nconf')
 const express = require('express')
+const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const RouterIndex = require('../router')
-const nconf = require('nconf')
 const app = express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
+/** 测试环境不需要日志 */
+if (nconf.get('morgan') !== undefined) {
+  app.use(morgan(nconf.get('morgan')))
+}
 
 app.use('/api/auth', RouterIndex.authRouter)
 app.use('/api/v1', RouterIndex.commonRouter)

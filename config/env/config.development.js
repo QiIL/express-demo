@@ -6,11 +6,13 @@ const devConfig = {
     database: 'express_demo_dev',
     username: 'root',
     pass: '123456',
+    morgan: 'dev',
     options: {
       host: 'localhost',
       port: 5432,
       dialect: 'postgres',
       omitNull: true,
+      logging: false,
       pool: {
         max: 5,
         min: 0,

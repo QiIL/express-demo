@@ -6,6 +6,7 @@ const prodConfig = {
     database: 'express_demo_pord',
     username: 'root',
     pass: '123456',
+    morgan: 'combined',
     options: {
       host: 'localhost',
       port: 5432,
