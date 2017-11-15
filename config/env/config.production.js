@@ -2,11 +2,11 @@ const baseConfig = require('./config.base')
 
 const prodConfig = {
   mongodb: 'mongodb://localhost:27017/Express_Demo_Pord',
+  morgan: 'combined',
   postgres: {
     database: 'express_demo_pord',
     username: 'root',
     pass: '123456',
-    morgan: 'combined',
     options: {
       host: 'localhost',
       port: 5432,

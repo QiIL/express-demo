@@ -4,7 +4,7 @@
 'use strict'
 
 const {savePet, findPet} = require('../services/pet')
-const {PetSchema} = require('../models/mongodb/pet')
+const {petSchema} = require('../models/mongodb/pet')
 const {validate} = require('../services/common/body_validate')
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
   },
   create: async (req, res) => {
     try {
-      let reqData = await validate(PetSchema, req.body)
+      let reqData = await validate(petSchema, req.body)
       const newPet = await savePet(reqData)
       return res.status(201).json({data: newPet, msg: '添加宠物成功'})
     } catch (err) {

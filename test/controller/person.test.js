@@ -31,7 +31,7 @@ describe('Controller: personController', () => {
         })
     })
   })
-  describe.only('Action: update', () => {
+  describe('Action: update', () => {
     var data = {
       Name: "Filmend",
       Birthday: 1510209213000,

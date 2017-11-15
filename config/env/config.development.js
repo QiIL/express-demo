@@ -2,11 +2,11 @@ const baseConfig = require('./config.base')
 
 const devConfig = {
   mongodb: 'mongodb://localhost:27017/Express_Demo_Dev',
+  morgan: 'dev',
   postgres: {
     database: 'express_demo_dev',
     username: 'root',
     pass: '123456',
-    morgan: 'dev',
     options: {
       host: 'localhost',
       port: 5432,
