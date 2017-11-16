@@ -29,22 +29,23 @@ module.exports = (sql, bind, status) => {
         type = sequelize.QueryTypes.DELETE
         break
     }
-    sequelize.query(
-      {
-        query: sql,
-        bind: bind
-      },
-      {
-        type: type
-      }
-    )
-      .then((rows) => {
+    sequelize
+      .query(
+        {
+          query: sql,
+          bind: bind
+        },
+        {
+          type: type
+        }
+      )
+      .then(rows => {
         if (!Array.isArray(rows)) {
           throw new Error('rows 的值不是一个数组，查询失败！')
         }
         resolve(rows)
       })
-      .catch((error) => {
+      .catch(error => {
         reject(error)
       })
   })

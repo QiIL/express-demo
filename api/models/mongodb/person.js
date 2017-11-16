@@ -6,11 +6,9 @@ const Joi = require('joi')
 const Schema = mongoose.Schema
 
 const PersonSchema = new Schema({
-  Name: {type: String}, // 名字
-  Birthday: {type: Date}, // 生日
-  Pets: [
-    {type: Schema.Types.ObjectId, ref: 'Pet'}
-  ] // 宠物
+  Name: { type: String }, // 名字
+  Birthday: { type: Date }, // 生日
+  Pets: [{ type: Schema.Types.ObjectId, ref: 'Pet' }] // 宠物
 })
 
 const PersonValidateSchema = Joi.object({

@@ -83,7 +83,7 @@ module.exports = {
    * @param {String} buff
    * @return {String} result
 	 */
-  BinaryNot: (buff) => {
+  BinaryNot: buff => {
     let result = ''
     if (buff.length !== nconf.get('commonIdMathLength')) {
       throw new Error('invalaid string length')
@@ -103,7 +103,7 @@ module.exports = {
 	 * @param {String} BinaryBuff
    * @return {String} result
 	 */
-  BinaryChange: (BinaryBuff) => {
+  BinaryChange: BinaryBuff => {
     let subBuff = ''
     let result = ''
     if (parseInt(BinaryBuff.length / 4) !== BinaryBuff.length / 4) {

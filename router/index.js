@@ -1,7 +1,8 @@
 /**
  * router
  */
-const message = require('../api/middlewares/message').message
+const fontMessage = require('../api/middlewares/font_message')
+const afterMessage = require('../api/middlewares/after_message')
 const express = require('express')
 
 const authRouter = express.Router()
@@ -10,11 +11,12 @@ const commonRouter = express.Router()
 /**
  * authRouter前置中间件
  */
-authRouter.use(message)
+authRouter.use(fontMessage)
 
 /**
  * commonRouter前置中间件
  */
+commonRouter.use(afterMessage)
 
 /**
  * 路由编写
@@ -22,7 +24,7 @@ authRouter.use(message)
 require('./snowflake')(authRouter, commonRouter)
 require('./pet')(authRouter, commonRouter)
 require('./person')(authRouter, commonRouter)
-
+require('./session')(authRouter, commonRouter)
 /**
  * authRouter后续中间件
  */
@@ -30,7 +32,6 @@ require('./person')(authRouter, commonRouter)
 /**
  * commonRouter后续中间件
  */
-commonRouter.use(message)
 
 module.exports = {
   authRouter: authRouter,

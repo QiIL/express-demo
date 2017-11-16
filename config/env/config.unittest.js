@@ -1,7 +1,14 @@
 const baseConfig = require('./config.base')
 
 const unitTestConfig = {
+  port: 30002,
   mongodb: 'mongodb://localhost:27017/Express_Demo_Test',
+  redis: {
+    host: '127.0.0.1',
+    port: 6379,
+    password: '',
+    secret: 'lalala'
+  },
   postgres: {
     database: 'express_demo_test',
     username: 'root',
@@ -18,8 +25,7 @@ const unitTestConfig = {
         idle: 10000
       }
     }
-  },
-  port: 30002
+  }
 }
 
 module.exports = Object.assign(unitTestConfig, baseConfig)

@@ -38,15 +38,29 @@ const operatorsAliases = {
   $col: Op.col
 }
 
-const sequelize = new Sequelize(nconf.get('postgres:database'), nconf.get('postgres:username'),
-  nconf.get('postgres:pass'), Object.assign(nconf.get('postgres:options'), {operatorsAliases: operatorsAliases}))
+const sequelize = new Sequelize(
+  nconf.get('postgres:database'),
+  nconf.get('postgres:username'),
+  nconf.get('postgres:pass'),
+  Object.assign(nconf.get('postgres:options'), {
+    operatorsAliases: operatorsAliases
+  })
+)
 
-sequelize.authenticate()
+sequelize
+  .authenticate()
   .then(() => {
-    console.log(`\x1b[33m%s\x1b[0m`, 'Connection has been established successfully.')
+    console.log(
+      `\x1b[33m%s\x1b[0m`,
+      'Connection has been established successfully.'
+    )
   })
   .catch(err => {
-    console.error(`\x1b[33m%s\x1b[0m`, 'Unable to connect to the database:', err)
+    console.error(
+      `\x1b[33m%s\x1b[0m`,
+      'Unable to connect to the database:',
+      err
+    )
   })
 
 module.exports = sequelize

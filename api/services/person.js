@@ -4,7 +4,7 @@
 const Person = require('../models/mongodb/person').personModel
 
 module.exports = {
-  savePerson: (data) => {
+  savePerson: data => {
     return new Person(data).save()
   },
   findPerson: (filter, field = null, options = {}) => {
@@ -13,7 +13,7 @@ module.exports = {
   findOnePerson: (filter, field = null, options = {}) => {
     return Person.findOne(filter, field, options)
   },
-  findPersonById: (personId) => {
+  findPersonById: personId => {
     return Person.findById(personId)
   },
   updatePerson: (filter, data, options = {}) => {

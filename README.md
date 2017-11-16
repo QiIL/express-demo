@@ -42,7 +42,7 @@ curl 'http://localhost:30001/api/v1/person' \
 
 ### Todo LIst
 
-* [ ] session 存到 redis
-* [ ] session 共享
+* [x] session 存到 redis
+* [x] session 共享
 * [ ] 登录认证
 * [ ] 更多业务场景覆盖

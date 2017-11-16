@@ -40,7 +40,6 @@ let sequence = 0
 let lastTimestamp = -1
 
 module.exports = {
-
   SnowflakeIdWorker: (wId = 0, datId = 0) => {
     // ========================================= Fields ===================================================
     /** 开始时间戳 （2017-10-10） */
@@ -85,10 +84,18 @@ module.exports = {
 		 * @param datacenterId 数据中心ID（0-31）
 		 */
     if (wId > maxWorkerId || wId < 0) {
-      throw new Error("worker Id can't be greater than" + String(maxWorkerId) + 'or less than 0')
+      throw new Error(
+        "worker Id can't be greater than" +
+          String(maxWorkerId) +
+          'or less than 0'
+      )
     }
     if (datId > maxDatacenterId || datId < 0) {
-      throw new Error("datacenterId Id can't be greater than" + String(maxDatacenterId) + 'or less than 0')
+      throw new Error(
+        "datacenterId Id can't be greater than" +
+          String(maxDatacenterId) +
+          'or less than 0'
+      )
     }
     workerId = wId
     datacenterId = datId
@@ -101,7 +108,11 @@ module.exports = {
 
     // 如果当前时间小于上一次生成id的时间戳，说明系统始终回退过，这个时候应该抛出异常
     if (timestamp < lastTimestamp) {
-      throw new Error('Clock moved backwards.  Refusing to generate id for ' + String(lastTimestamp - timestamp) + ' milliseconds')
+      throw new Error(
+        'Clock moved backwards.  Refusing to generate id for ' +
+          String(lastTimestamp - timestamp) +
+          ' milliseconds'
+      )
     }
 
     // 如果是同一时间生成的，则进行毫秒内序列
@@ -121,10 +132,12 @@ module.exports = {
     lastTimestamp = timestamp
 
     // 通过转换字符串的方式把所有的一起组成64位的id
-    let binaryId = StringBinaryService.GCD(timestamp - twepoch, timestampBits) + StringBinaryService.GCD(datacenterId, datacenterIdBits) +
-                   StringBinaryService.GCD(workerId, workerIdBits) + StringBinaryService.GCD(sequence, sequenceBits)
+    let binaryId =
+      StringBinaryService.GCD(timestamp - twepoch, timestampBits) +
+      StringBinaryService.GCD(datacenterId, datacenterIdBits) +
+      StringBinaryService.GCD(workerId, workerIdBits) +
+      StringBinaryService.GCD(sequence, sequenceBits)
     // 转换成16进制然后返回
     return StringBinaryService.BinaryChange(binaryId)
   }
-
 }
