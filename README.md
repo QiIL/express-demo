@@ -28,6 +28,7 @@ $ pm2 stop pid
 ### 相关工具
 * [ESLint](http://eslint.cn/docs/rules/)，使用了vue cli推荐规则的其中一个，可根据自己使用情况调整.
 * [ES6](http://es6.ruanyifeng.com/)，ES6 语法
+* [prettier](https://prettier.io/)，统一格式化工具，统一代码风格
 
 ### 现有 API
 
